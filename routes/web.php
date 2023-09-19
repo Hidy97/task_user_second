@@ -19,4 +19,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/api/tasks', [TaskController::class, 'index']);
+
+Route::get('/api/tasks/{id}', [TaskController::class, 'show']);
+
+Route::post('/api/tasks', [TaskController::class, 'store']);
+
+Route::put('/api/tasks/{id}', [TaskController::class, 'update']);
+
+Route::delete('/api/tasks/{id}', [TaskController::class, 'destroy']);
+//get all
+Route::get('/api/users', [UserController::class, 'index']);
+//new
+Route::get('/task/new', [TaskController::class, 'newView']);
+//edit
+Route::get('/task/edit/{id}', [TaskController::class, 'editView']);
+//view útvonalak
+Route::get('/task/list', [TaskController::class, 'listView']);
 //require __DIR__ . '/auth.php';
