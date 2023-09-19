@@ -37,3 +37,9 @@ Route::get('/task/edit/{id}', [TaskController::class, 'editView']);
 //view útvonalak
 Route::get('/task/list', [TaskController::class, 'listView']);
 //require __DIR__ . '/auth.php';
+
+//user útvonala
+///api/users/{{$user->id}}
+Route::get('/api/user', [UserController::class, 'index']);
+Route::get('/api/users/{id}', [UserController::class, 'show']);
+Route::get('/user/list', [UserController::class, 'listView']);
